@@ -1,0 +1,165 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=0">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="Cache-control" content="max-age=1700">
+		<meta name="baidu-site-verification" content="Nas0Ti6jDJ" />
+		<meta name="msvalidate.01" content="57ABC4EAECFF415C48A052449ABEE1B7" />
+		<meta name="sogou_site_verification" content="kpgkS0dgBN" />
+		<meta name="description" content="营销管家" />
+		<meta name="keywords" content="营销管家" />
+		<title>营销管家APP下载</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			body {
+				color: #5c5c5c;
+				font-size: 12px;
+				font-family: "微软雅黑", "黑体", "Lucida Grande", Verdana, sans-serif;
+			}
+			img {
+				border: none;
+			}
+			ul, li, dl, dt, dd {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			a {
+				color: #FFFFFF;
+				text-decoration: none;
+			}
+			a: hover {
+				text-decoration: none;
+			}
+			.download p {
+				width: 100%;
+				height: 100%;
+				padding-bottom: 80px;
+				padding-top: 10px;
+				background: url(images/bg.jpg) top center repeat-y;
+			}
+			.download p a{
+				width: 290px;
+				display:block;
+				padding-top:20px;
+			}
+			.download p img{
+				width: 320px;
+			}
+			.download p a img{
+				width: 290px;
+				display:block;
+				
+			}
+			.tanchu{
+			    display:none;
+				position:absolute;
+				z-index:9999;
+				width:100%;
+				top:0px;
+			}
+			.tanchu img{ 
+				width:100%;
+				height:auto;
+				}
+		</style>
+		<div style="display:none">
+			<script type="text/javascript">
+				var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+				document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9f06da7c099b23cf996d30318faae9bd' type='text/javascript'%3E%3C/script%3E"));
+			</script>
+		</div>
+		<script src="js/jquery-1.8.1.min.js"></script>
+	</head>
+	<script>
+		$(document).ready(function() {
+		    if(isWeiXin())
+		     {
+			 $(".wechatPng").css("display","block");
+			 $(".tanchu").css("display","block");
+		     } 
+		});
+		 function GetQueryString(name)
+		  {
+		     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		     var r = window.location.search.substr(1).match(reg);
+		     if(r!=null)return  unescape(r[2]); return null;
+		   }
+		 function isWeiXin(){ 
+				var ua = window.navigator.userAgent.toLowerCase(); 
+				if(ua.match(/MicroMessenger/i) == 'micromessenger'){ 	
+					return true; 
+				}
+				else{ 
+					return false; 
+				} 
+			}	 
+		  
+		  function downloadAPK(val){
+			  //type=2是ios，way=1是点击下载
+		   if(val=="2")
+		   {
+		        window.location.href="VXDeeplink://app.wgmf.com?target=shoppingvc"; 
+		   }
+		   else
+		   {
+		        window.location.href="http://113.108.103.238:8999/update/YingXiaoGuanJia.apk"; 
+		   }
+		}
+	</script>
+
+	<body>
+		<div class="download" align="center">
+			<p id="ios1" class="ios_download" style="display: none; ">
+				<img src="http://7xuy4o.com1.z0.glb.clouddn.com/topimage.png" alt="点击跳转到VXDeeplink shopping page"/>
+				<a style="cursor:hand" onClick="downloadAPK('2')" title="苹果下载"> <img src="http://7xuy4o.com1.z0.glb.clouddn.com/bottombtn.png"> </a>
+			</p>
+			<div class="tanchu"><img src="images/zzz.jpg" alt="" /></div>
+			<p id="andriod1" class="an_download">
+				<img src="images/data.png" alt="营销管家APP下载"/>
+				<a style="cursor:hand" onClick="downloadAPK('1')" title="安卓下载"> <img src="images/android.png"> </a>
+			</p>		
+		</div>
+	</body>
+	<script type="text/javascript">
+		var browser={
+		
+		versions:function(){
+		var u = navigator.userAgent, app = navigator.appVersion;
+		
+		return {
+		trident: u.indexOf('Trident') > -1, //IE内核
+		presto: u.indexOf('Presto') > -1, //opera内核
+		webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+		gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+		mobile: !!u.match(/AppleWebKit.*Mobile.*/)||!!u.match(/AppleWebKit/), //是否为移动终端
+		ios: !!u.match(/(i[^;]+\;(U;)? CPU.+Mac OS X)/), //ios终端
+		android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+		iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者QQHD浏览器
+		iPad: u.indexOf('iPad') > -1, //是否iPad
+		webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+		};
+		}(),
+		language:(navigator.browserLanguage || navigator.language).toLowerCase()
+		}
+		
+		var ios1=document.getElementById("ios1");  
+		var andriod1=document.getElementById("andriod1");
+		if(browser.versions.android)
+		{
+			andriod1.style.display="block";
+			ios1.style.display="none";
+		}
+		else if(browser.versions.ios || browser.versions.iPhone)
+		{
+			ios1.style.display="block";
+			andriod1.style.display="none";
+		}
+	</script>
+
+</html>
